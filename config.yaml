@@ -1,0 +1,47 @@
+# DeepSeek API配置
+api:
+  # DeepSeek API密钥
+  api_key: "your_deepseek_api_key"
+  # API基础URL
+  base_url: "https://api.deepseek.com/v1"
+  # 使用的模型
+  model: "deepseek-chat"
+  # 请求超时时间(秒)
+  timeout: 120
+
+# 安全设置
+security:
+  # 危险命令需要确认
+  confirm_dangerous_commands: true
+  # 完全禁止的命令列表
+  blocked_commands:
+    - "rm -rf /"
+    - "mkfs"
+    - "dd if=/dev/zero"
+  # 需要确认的命令模式
+  confirm_patterns:
+    - "rm -rf"
+    - "shutdown"
+    - "reboot"
+    - "passwd"
+    - "chmod -R 777"
+
+# 用户界面设置
+ui:
+  # 是否启用彩色输出
+  color_output: true
+  # 历史记录文件
+  history_file: "~/.linuxagent_history"
+  # 最大历史记录条数
+  max_history: 1000
+
+# 日志设置
+logging:
+  # 日志级别: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  level: "INFO"
+  # 日志文件路径
+  file: "~/.linuxagent.log"
+  # 日志轮换大小(MB)
+  max_size_mb: 10
+  # 保留的日志文件数量
+  backup_count: 5 
